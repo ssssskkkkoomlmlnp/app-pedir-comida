@@ -1,0 +1,7 @@
+{
+  "name": "ProyectoAppsNativas",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,29 @@
+section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    align-content: center;
+}
+
+section a{
+    position: relative;
+    background-color: grey;
+    color: white;
+    border-radius: 10px;
+    padding: 80px 0; //si al padding le pongo un solo valor es para izquierda, derecha, arriba y abajo. Pero si le pongo 2 valores, el 1ro es para arriba y abajo y el 2do es para los costados//
+    text-align: center;
+    margin: 10px;
+    background-position: center;
+    background-size: cover;
+}
+
+span{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    padding: 5px;
+    width: 100%;
+    color: white;
+    font-size:x-large;
+    text-align: center;
+}

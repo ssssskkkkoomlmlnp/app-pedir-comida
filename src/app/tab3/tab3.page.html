@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      carrito
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Card Title</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let item of cartService.carrito">
+          <ion-thumbnail slot="start">
+            <img alt="{{item.producto.nombre}}" src="{{item.producto.imagen}}" />
+          </ion-thumbnail>
+          <ion-label>{{item.producto.nombre}} {{item.cantidad}}</ion-label>
+          <ion-button [fill] ="'clear'" (click)="cartService.eliminarProducto(item.producto.nombre)"><ion-icon name ="trash-outline"></ion-icon></ion-button>
+        </ion-item>
+       <!-- item son las variables del ngFor -->
+        
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+    <ion-list>
+      <ion-item>
+        <ion-label>Subtotal ${{cartService.totalCarrito}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Descuento</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Envío</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Total</ion-label>
+      </ion-item>
+    </ion-list>
+  
+    <ion-button expand="block" color="dark" fill="outline" (click)="realizarPedido()">Confirmar pedido</ion-button>
+    <ion-button expand="block" color="dark" fill="outline" (click)="cartService.vaciarCarrito()">Vaciar Carrito</ion-button>
+
+</ion-content>
